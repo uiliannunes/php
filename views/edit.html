@@ -1,0 +1,81 @@
+<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper blue darken-1">
+      <a href="" class="brand-logo">REMonitor</a>
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Relatórios</a></li>
+        <li><a href="#/login">Sair</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+      <style>
+        .wrapper {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      </style>
+
+    <!--Inicio Form -->
+
+    <div class="row wrapper">
+    <br/>
+    <h4>Editar</h4>
+
+    {{filtrado.id}}
+
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="date" class="datepicker" ng-model="filtrado.data">
+          <label for=""></label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" ng-model="filtrado.node">
+          <label for="node">Node</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select ng-model="filtrado.tratamento">
+            <option value="" disabled selected>--</option>
+            <option value="FEC">FEC</option>
+            <option value="MDU">MDU</option>
+            <option value="NODE Ofensor">Node Ofensor</option>
+            <option value="Preventiva">Preventiva</option>
+          </select>
+            <label>Tratamento</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="endereco" type="text" ng-model="filtrado.endereco">
+          <label for="endereco">Endereço</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="contrato" type="text" ng-model="filtrado.contrato">
+          <label for="contrato">Contrato</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="tecnico" type="text" ng-model="filtrado.tecnico">
+          <label for="tecnico">Técnico</label>
+        </div>   
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="descricao" class="materialize-textarea" ng-model="filtrado.descricao"></textarea>
+            <label for="descricao">Descrição</label>
+          </div>
+        </div>
+
+      <button style="" class="waves-effect waves-light btn" ng-click="addFiltrado(filtrado)">Editar</button>
+    </form>
+  
+  </div>
+<script type="text/javascript">
+          $(document).ready(function() {
+          $('select').material_select();
+          });
+    </script>
+  <!--FIM do FORM-->

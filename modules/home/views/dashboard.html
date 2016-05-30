@@ -1,0 +1,62 @@
+<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper blue darken-1">
+      <a href="" class="brand-logo">REMonitor</a>
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Relatórios</a></li>
+        <li><a href="#/login">Sair</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+    <div class="row">
+    	<div class="col s9">
+          <br/>
+        	<a href="#/dashboard/add" class="waves-effect waves-light btn">Inserir</a>
+    	</div>
+    	<div class="col s3">
+      		<br/>
+      		<label>
+          		<input ng-model="buscarFiltrado" placeholder="Buscar">
+      		</label>
+    	</div>
+
+    </div>
+
+
+    <table class="responsive-table striped">
+        <thead>
+          <tr>
+              <th data-field="id"></th>
+              <th data-field="data">Data</th>
+              <th data-field="node">Node</th>
+              <th data-field="tratamento">Tratamento</th>
+              <th data-field="endereco">Endereço</th>
+              <th data-field="contrato">Contrato</th>
+              <th data-field="vtexec">VT</th>
+              <th data-field="tecnico">Técnico</th>
+              <th data-field="descricao">Descrição</th>
+              <th data-field="editar"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="(key, filtrado) in filtrados | filter:buscarFiltrado">
+            <td>{{filtrado.data | date:'dd/MM/yyyy'}}</td>
+            <td>{{filtrado.node | uppercase}}</td>
+            <td>{{filtrado.tratamento}}</td>
+            <td>{{filtrado.endereco}}</td>
+            <td>{{filtrado.contrato}}</td>
+            <td>
+              {{filtrado.vt | date: 'dd/MM/yyyy'}}
+            </td>
+            <td>{{filtrado.tecnico}}</td>
+            <td>{{filtrado.descricao}}</td>
+            <td>
+              <a ng-href="#/dashboard/edit/{{filtrado.id}}"><span class="glyphicon glyphicon-pencil"></span></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>

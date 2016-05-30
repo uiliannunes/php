@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^remonitor\.ml$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.remonitor\.ml$
+RewriteRule ^/?$ "http\:\/\/remonitor\.ml\/index\.html" [R=301,L]
+
